@@ -2,7 +2,7 @@ const { Schema, model } = require('mongoose');
 const reactionSchema = require('./Reaction');
 const moment = require('moment');
 
-// Schema to create Post model
+// Schema to create Thought model
 const thoughtSchema = new Schema(
   {
     thoughtText: {
@@ -23,6 +23,7 @@ const thoughtSchema = new Schema(
     reactions: [reactionSchema],
   },
   {
+    // Here we are indicating that we want virtuals to be included with our response, overriding the default behavior
     toJSON: {
       virtuals: true,
     },
@@ -30,7 +31,7 @@ const thoughtSchema = new Schema(
   }
 );
 
-// Create a virtual property `getTags` that gets the amount of tags associated with an application
+// Create a virtual property `reactionCount` that gets the amount of reactions associated with a thought
 thoughtSchema
   .virtual('reactionCount')
   // Getter
@@ -38,7 +39,7 @@ thoughtSchema
     return this.reactions.length;
   });
 
-// Initialize our Application model
+// Initialize our Thought model
 const Thought = model('thought', thoughtSchema);
 
 module.exports = Thought;
