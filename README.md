@@ -25,7 +25,8 @@ POST: localhost:3001/api/users/(userId)/friends/(friendId) - To add a friend
 POST: localhost:3001/api/thoughts - To create a thought
  `{
     "thoughtText": "(ENTER THOUGHT TEXT HERE)",
-    "username": "(ENTER USERNAME ASSOCIATED WITH THOUGHT HERE.)"
+    "username": "(ENTER USERNAME ASSOCIATED WITH THOUGHT HERE)",
+    "userId": "(ENTER USERID ASSOCIATES WITH THOUGHT HERE)"
   }`
 
 POST: localhost:3001/api/thoughts/(thoughtId)/reactions - To post a reaction to a thought
@@ -67,4 +68,8 @@ Joey Lee: https://github.com/Rockojoe2
 This repository is licensed by MIT. See https://mit-license.org/ to learn more.
 
 ## Usage
-Walk this walkthrough video: 
+Watch this walkthrough video: https://drive.google.com/file/d/1TKiDbQDcq4TRjyG5iuSNHNwjL5pWzARl/view?usp=sharing
+
+![Insomnia Screenshot of GET all users](image.png)
+
+https://github.com/micavilla/social-network-api
